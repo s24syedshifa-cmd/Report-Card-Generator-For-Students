@@ -1,0 +1,116 @@
+import java.util.Scanner;
+
+public class ReportCardGenerator {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // --- INPUT SECTION ---
+        System.out.println("===== STUDENT REPORT CARD GENERATOR =====");
+
+        System.out.print("Enter Student Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Roll Number: ");
+        String roll = sc.nextLine();
+
+        System.out.print("Enter Class: ");
+        String std = sc.nextLine();
+
+        System.out.println("\nEnter Marks Out of 100:");
+
+        System.out.print("Maths: ");
+        int m1 = sc.nextInt();
+
+        System.out.print("Science: ");
+        int m2 = sc.nextInt();
+
+        System.out.print("English: ");
+        int m3 = sc.nextInt();
+
+        System.out.print("Computer: ");
+        int m4 = sc.nextInt();
+
+        System.out.print("History: ");
+        int m5 = sc.nextInt();
+
+        // --- CALCULATION SECTION ---
+        int total = m1 + m2 + m3 + m4 + m5;
+        double percentage = total / 5.0;
+
+        String grade;
+        if (percentage >= 90) grade = "A+";
+        else if (percentage >= 80) grade = "A";
+        else if (percentage >= 70) grade = "B";
+        else if (percentage >= 60) grade = "C";
+        else if (percentage >= 50) grade = "D";
+        else grade = "F";
+
+        String result = (percentage >= 35) ? "PASS" : "FAIL";
+
+        // --- OUTPUT SECTION ---
+        System.out.println("\n\n==========================================");
+        System.out.println("               REPORT CARD                ");
+        System.out.println("==========================================");
+        System.out.println("Student Name : " + name);
+        System.out.println("Roll Number  : " + roll);
+        System.out.println("Class        : " + std);
+        System.out.println("------------------------------------------");
+        System.out.println("Subject              Marks");
+        System.out.println("------------------------------------------");
+        System.out.println("Maths                " + m1);
+        System.out.println("Science              " + m2);
+        System.out.println("English              " + m3);
+        System.out.println("Computer             " + m4);
+        System.out.println("History              " + m5);
+        System.out.println("------------------------------------------");
+        System.out.println("Total Marks          " + total + "/500");
+        System.out.println("Percentage           " + percentage + "%");
+        System.out.println("Grade                " + grade);
+        System.out.println("Result               " + result);
+        System.out.println("==========================================");
+        System.out.println("          *** End of Report ***           ");
+        System.out.println("==========================================");
+
+        sc.close();
+    }
+}
+================OUTPUT===================
+===== STUDENT REPORT CARD GENERATOR =====
+Enter Student Name: Syed shifa Syed haji
+Enter Roll Number: 312
+Enter Class: SY-C
+
+Enter Marks Out of 100:
+Maths: 99
+Science: 98
+English: 100
+Computer: 99
+History: 97
+
+
+==========================================
+               REPORT CARD
+==========================================
+Student Name : Syed shifa Syed haji
+Roll Number  : 312
+Class        : SY-C
+------------------------------------------
+Subject              Marks
+------------------------------------------
+Maths                99
+Science              98
+English              100
+Computer             99
+History              97
+------------------------------------------
+------------------------------------------
+Total Marks          493/500
+Percentage           98.6%
+Grade                A+
+Result               PASS
+==========================================
+          *** End of Report ***
+==========================================
+
